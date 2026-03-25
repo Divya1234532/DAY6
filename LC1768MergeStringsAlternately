@@ -1,0 +1,26 @@
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        char[] s1=word1.toCharArray();
+        char[] s2=word2.toCharArray();
+        char[] s=new char[s1.length+s2.length];
+        int idx=0;
+        int i = 0, j = 0;
+        for(i=0,j=0;i<s1.length&&j<s2.length;i++,j++)
+        {
+            
+            s[idx++]=s1[i];
+            s[idx++]=s2[j];
+        }
+        while(i < s1.length) {
+            s[idx++] = s1[i++];
+        }
+
+        while(j < s2.length) {
+            s[idx++] = s2[j++];
+        }
+
+        return new String(s);
+
+        
+    }
+}
